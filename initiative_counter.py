@@ -141,4 +141,6 @@ while (val is not "x"):
 		initiative_table.remove(node)
 		
 		node = tmp
-
+	elif (arguments[0] == "exit"):
+		print("Exiting...\n")
+		break
