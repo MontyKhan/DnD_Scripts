@@ -46,6 +46,12 @@ class LinkedList:
 		while (node.next != None or node.next != self.head):
 			node = node.next
 		return node
+
+	def remove(self,target):
+		node = self.head
+		while (node.next != target):
+			node = node.next
+		node.next = node.next.next
 	
 
 file = open("./stats/encounter1.csv", "r")
@@ -126,6 +132,13 @@ while (val is not "x"):
 				node = node.next
 		
 			node.insert_after(entry)
+			node = tmp
+	elif (arguments[0] == "rm"):
+		tmp = node
+		while (node.name != arguments[1]):
+			node = node.next
+
+		initiative_table.remove(node)
 		
 		node = tmp
 
