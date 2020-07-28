@@ -1,5 +1,4 @@
 from random import randrange as rand
-import keyboard
 
 class Node:
 	def __init__(self,name,init):
@@ -41,6 +40,12 @@ class LinkedList:
 	def change_head(self, new_head):
 		new_head.next = self.head
 		self.head = new_head
+
+	def get_last(self):
+		node = self.head
+		while (node.next != None or node.next != self.head):
+			node = node.next
+		return node
 	
 
 file = open("./stats/encounter1.csv", "r")
@@ -91,8 +96,36 @@ node.next = initiative_table.head
 val = "\n"
 
 while (val is not "x"):
-	print node
 	node = node.next
-	#val = keyboard.read_key()
-	val = raw_input()
+	print node
+	input = raw_input()
+
+	# Remove inputted line
 	print ("\033[A                             \033[A")
+
+	input = input.replace('\n', '')
+	arguments = input.split(' ')
+
+	if (arguments[0] == "cont"):
+		continue
+	elif (arguments[0] == "add"):
+		entry = Node(arguments[1],int(arguments[2]))
+		tmp = node
+		if (initiative_table.head.init < entry.init):
+			while (node.next != initiative_table.head):
+				node = node.next
+			node.next = None
+			initiative_table.change_head(entry)
+			while (node.next != None):
+				node = node.next
+			node.next = initiative_table.head
+		else:
+			while not ((entry.init < node.init) and (entry.init > node.next.init)):
+				if (entry.init < node.init) and (node.next == initiative_table.head):
+					break
+				node = node.next
+		
+			node.insert_after(entry)
+		
+		node = tmp
+
