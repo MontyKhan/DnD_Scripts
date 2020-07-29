@@ -117,7 +117,7 @@ for line in file_contents:
 		else:
 			node = node.next
 
-print initiative_table
+print (initiative_table)
 
 node = initiative_table.head
 
@@ -130,7 +130,7 @@ val = "\n"
 
 while (val is not "x"):
 	node = node.next
-	print node
+	print (node)
 	input = raw_input()
 
 	# Remove inputted line
@@ -169,7 +169,7 @@ while (val is not "x"):
 		
 		node = tmp
 	elif (arguments[0] == "get"):
-		print initiative_table.get(arguments[1])
+		print (initiative_table.get(arguments[1]))
 		raw_input()
 	elif (arguments[0] == "exit"):
 		print("Exiting...\n")
