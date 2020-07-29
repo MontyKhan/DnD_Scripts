@@ -68,6 +68,12 @@ class LinkedList:
 		while (node.next != target):
 			node = node.next
 		node.next = node.next.next
+
+	def get(self,target_name):
+		node = self.head
+		while (node.name != target_name):
+			node = node.next
+		return node
 	
 
 file = open("./stats/encounter1.csv", "r")
@@ -160,6 +166,9 @@ while (val is not "x"):
 		initiative_table.remove(node)
 		
 		node = tmp
+	elif (arguments[0] == "get"):
+		print initiative_table.get(arguments[1])
+		raw_input()
 	elif (arguments[0] == "exit"):
 		print("Exiting...\n")
 		break
