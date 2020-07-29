@@ -1,4 +1,5 @@
-from random import randrange as rand
+from random import randrange as rand	# For rolling of dice
+import sys				# For taking initial arguments
 
 class Node:
 	def __init__(self,name,init,cr,hp,ac,speed,stats,traits,weapons,spells,abilities):
@@ -76,7 +77,8 @@ class LinkedList:
 		return node
 	
 
-file = open("./stats/encounter1.csv", "r")
+# Main function starts here.
+file = open(sys.argv[1], "r")
 
 file_contents = file.readlines()
 
