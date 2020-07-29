@@ -1,0 +1,114 @@
+<encounter>
+	<monster>
+		<name>Orc</name>
+		<ac>13</ac>
+		<hp>15</hp>
+		<speed>30</speed>
+		<initiative>1</initiative>
+		<weapon>
+			<name>Greataxe</name>
+			<range>5</range>
+			<attack>5</attack>
+			<damage>1d12 + 3</damage>
+			<type>slashing</type>
+		</weapon>
+		<coordinates>5,5,0</coordinates>
+	</monster>
+
+	<monster>
+		<name>Goblin</name>
+		<ac>15</ac>
+		<hp>7</hp>
+		<speed>30</speed>
+		<initiative>2</initiative>
+		<weapon>
+			<name>Scimitar</name>
+			<range>5</range>
+			<attack>4</attack>
+			<damage>1d6 + 2</damage>
+			<type>slashing</type>
+		</weapon>
+		<coordinates>5,15,0</coordinates>
+	</monster>
+
+	<monster>
+		<name>Bugbear</name>
+		<ac>16</ac>
+		<hp>27</hp>
+		<speed>30</speed>
+		<initiative>2</initiative>
+		<weapon>
+			<name>Morningstar</name>
+			<range>5</range>
+			<attack>4</attack>
+			<damage>2d8 + 2</damage>
+			<type>bludgeoning</type>
+		</weapon>
+		<coordinates>5,25,0</coordinates>
+	</monster>
+
+	<monster>
+		<name>Bandit</name>
+		<ac>12</ac>
+		<hp>11</hp>
+		<speed>30</speed>
+		<initiative>1</initiative>
+		<weapon>
+			<name>Scimitar</name>
+			<range>5</range>
+			<attack>3</attack>
+			<damage>1d6 + 1</damage>
+			<type>bludgeoning</damage>
+		</weapon>
+		<coordinates>25,5,0</coordinates>
+	</monster>
+
+	<monster>
+		<name>Kobold</name>
+		<ac>12</ac>
+		<hp>5</hp>
+		<speed>30</speed>
+		<initiative>2</initiative>
+		<weapon>
+			<name>Dagger</name>
+			<range>5</range>
+			<attack>4</attack>
+			<damage>1d4 + 2</damage>
+			<type>piercing</type>
+		</weapon>
+		<coordinates>25,15,0</coordinates>
+	</monster>
+
+	<monster>
+		<name>Hobgoblin</name>
+		<ac>18</ac>
+		<hp>11</hp>
+		<speed>30</speed>
+		<initiative>1</initiative>
+		<weapon>
+			<name>Longsword</name>
+			<range>5</range>
+			<attack>3</attack>
+			<damage>1d10 + 1</damage>
+			<type>slashing</type>
+		</weapon>
+		<coordinates>25,25,0</coordinates>
+	</monster>
+
+	<monster>
+		<name>Drow</name>
+		<ac>15</ac>
+		<hp>13</hp>
+		<speed>30</speed>
+		<initiative>2</initiative>
+		<weapon>
+			<name>Shortsword</name>
+			<range>5</range>
+			<attack>4</attack>
+			<damage>1d6 + 2</damage>
+			<type>piercing</type>
+		</weapon>
+		<coordinates>65,5,0</coordinates>
+	</monster>
+
+</encounter>
