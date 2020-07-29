@@ -1,13 +1,29 @@
 from random import randrange as rand
 
 class Node:
-	def __init__(self,name,init):
+	def __init__(self,name,init,cr,hp,ac,speed,stats,traits,weapons,spells,abilities):
 		self.name = name
 		self.init = init
+		self.cr = cr
+		self.hp = hp
+		self.ac = ac
+		self.speed = speed
+		self.stats = stats
+		self.traits = traits
+		self.weapons = weapons
+		self.spells = spells
+		self.abilities = abilities
 		self.next = None
 
 	def __repr__(self):
-		val = self.name + " " + str(self.init)
+		val = self.name + " Init: " + str(self.init) + " CR: " + self.cr
+		val += " HP: " + self.hp + " AC: " + self.ac + " Speed: " + self.speed + "\n\n"
+		val += "STR\tDEX\tCON\tINT\tWIS\tCHA\n"
+		val += self.stats.replace(";","\t") + "\n"
+		val += self.traits + "\n\n"
+		val += self.weapons + "\n"
+		val += self.spells + "\n"
+		val += self.abilities + "\n"
 		return val
 
 	def insert_after(self, entry):
@@ -66,9 +82,12 @@ initiative_table = LinkedList()
 # Add contents to list
 for line in file_contents:
 	line = line.replace('\n', '')
+	line = line.replace('endl','\n')
+	line = line.replace('n/a','')
 	line = line.split(',')
-	initiative = rand(1,21,1) + int(line[4])
-	entry = Node(line[0],initiative)
+	initiative = rand(1,21,1) + int(line[1])
+	# entry = Node(line[0],initiative)
+	entry = Node(line[0],initiative,line[2],line[3],line[4],line[5],line[6],line[7],line[8],line[9],line[10])
 	
 	if initiative_table.head is None:
 		initiative_table.head = entry

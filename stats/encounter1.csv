@@ -1,8 +1,8 @@
-Name,HP,AC,Speed,Init,Attack,Damage
-Orc,15,13,30,1,5,1d12 + 3
-Goblin,7,15,30,2,4,1d6 + 2
-Bugbear,27,16,30,2,4,2d8 + 2
-Bandit,11,12,30,1,3,1d6 + 1
-Kobold,5,12,30,2,4,1d4 + 2
-Hobgoblin,11,18,30,1,3,1d10 + 1
-Drow,13,15,30,2,4,1d6 + 2
+Name,Init,CR,HP,AC,Speed,Stats,Traits,Weapons,Spells,Abilities
+Orc,1,½,15,13,30,16;12;16;7;11;10,Skills: Intimidation +2endlSenses: Darkvision 60ft.. passive perception 10endlLanguages: Common. OrcendlendlAggressive: As a bonus action. dash towards foeendl,Greataxe. +5 to hit. 5Ft. 1d12+3 slashingendlJavelin. +5 to hit. 5Ft. 1d6+3 piercingendlJavelin. +5 to hit. 30/120ft. 1d6+3 piercingendl,n/a,n/a
+Goblin,2,¼,7,15,30,8;14;10;10;8;8,Skills: Stealth +6endlSenses: Darkvision 60ft. passive perception 9endlLanguages: Common. GoblinendlendlNimble Escape: Can take Disengage or Hide as a bonus actionendl,Scimitar: +4 to hit. 5Ft. 1d6+2 slashingendlShortbow: +4 to hit. 80/320ft. 1d6+2 piercingendl,n/a,n/a
+Bugbear,2,1,27,16,30,15;14;13;8;11;9,Skills: Stealth +6. Survival +2endlSenses: Darkvision 60ft. passive perception 10endlLanguages: Common. GoblinendlendlSurprise Attack: If a bugbear surprises a foe and hits on the first round. deal extra 2d6 damageendl,Morningstar: +4 to hit. 5Ft. 2d8+2 piercingendlJavelin: +4 to hit. 5ft. 2d6+2 piercing damageendlJavelin: +4 to hit. 30/120ft. 1D6+2 piercing damageendl,n/a,n/a
+Bandit,1,0.125,11,12,30,11;12;12;10;10;10,Senses: Passive perception 10endlLanguages: Any one language,Scimitar: +3 to hit. 5Ft. 1d6+1 bludgeoningendlLight crossbow: +3 to hit. 80/320ft. 1d8+1 piercing.,n/a,n/a
+Kobold,2,0.125,5,12,30,7;15;9;8;7;8,Sunlight Sensitivity: Disadvantage on attack rolls and Perception checks in daylightendlPack Tactics: Advantage on attack if next to healthy ally,Dagger: +4 to hit. 5Ft. 1d4+2 piercingendlSling: +4 to hit. 30/120 ft. 1d4+2 bludgeoningendl,n/a,n/a
+Hobgoblin,1,½,11,18,30,13;12;12;10;10;9,Senses: Darkvision 60ft. passive perception 10endlLanguages: Common. GoblinendlendlMartial Advantage: Once per turn. deal extra 2d6 if foe next to ally,Longsword: +3 to hit. 5Ft. 1d10+1 slashing damage. two handedendlLongsword: +3 to hit. 5Ft. 1D8+1 slashing damage. one handedendlLongbow: +3 to hit. 150/600ft. 1d8+1 piercing damageendl,n/a,n/a
+Drow,2,¼,13,15,30,10;14;10;11;11;12,Skills: Perception +2. Stealth +4endlSenses: Darkvision 120ft. passive perception 12endlLanguages: Elvish. UndercommonendlendlFey Ancestry: Advantage against charm and immune to sleependlSunlight Sensitivity: Daylight gives disadvantage on Attack and PerceptionendlInnate Spellcasting: Dancing Lights at will. Darkness and Faerie Fire once per day each,Shortsword: +4 to hit. 5Ft. 1d6+2 piercing.endlHand Crossbow: +4 to hit. 30/120ft. 1d6+2 piercing.endl\tIf target fails DC13 Con check. poisoned for 1 hour.endl\tIf fails by 5 or more fall unconscious until physically woken.endl,n/a,n/a
