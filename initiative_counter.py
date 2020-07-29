@@ -134,7 +134,7 @@ while (val is not "x"):
 	if (arguments[0] == "cont"):
 		continue
 	elif (arguments[0] == "add"):
-		entry = Node(arguments[1],int(arguments[2]))
+		entry = Node(arguments[1],int(arguments[2]),'Player','','','','','','','','')
 		tmp = node
 		if (initiative_table.head.init < entry.init):
 			while (node.next != initiative_table.head):
