@@ -1,26 +1,53 @@
+import xml.etree.ElementTree as et
 from random import randrange as rand	# For rolling of dice
 import sys				# For taking initial arguments
 
 class Node:
-	def __init__(self,name,init,cr,hp,ac,speed,stats,traits,weapons,spells,abilities):
-		self.name = name
-		self.init = init
-		self.cr = cr
-		self.hp = hp
-		self.ac = ac
-		self.speed = speed
-		self.stats = stats
-		self.traits = traits
-		self.weapons = weapons
-		self.spells = spells
-		self.abilities = abilities
+	def __init__(self,entry):
+		self.wipe_all()
+		for child in entry:
+			if (child.tag == "name"):
+				self.name = child.text
+			elif (child.tag == "init"):
+				self.init = rand(1,21,1) + int(child.text)
+			elif (child.tag == "cr"):
+				self.cr = child.text
+			elif (child.tag == "hp"):
+				self.hp = child.text
+			elif (child.tag == "ac"):
+				self.ac = child.text
+			elif (child.tag == "speed"):
+				self.speed = child.text
+			elif (child.tag == "stats"):
+				self.stats = child.text
+			elif (child.tag == "traits"):
+				self.traits = child.text
+			elif (child.tag == "weapons"):
+				self.weapons = child.text
+			elif (child.tag == "spells"):
+				self.spells = child.text
+			elif (child.tag == "abilities"):
+				self.abilities = child.text
+
+	def wipe_all(self):
+		self.name = ""
+		self.init = "0"
+		self.cr = "0"
+		self.hp = "0"
+		self.ac = "0"
+		self.speed = "0"
+		self.stats = "0;0;0;0;0;0"
+		self.traits = ""
+		self.weapons = ""
+		self.spells = ""
+		self.abilities = ""
 		self.next = None
 
 	def __repr__(self):
 		val = self.name + " Init: " + str(self.init) + " CR: " + self.cr
 		val += " HP: " + self.hp + " AC: " + self.ac + " Speed: " + self.speed + "\n\n"
 		val += "STR\tDEX\tCON\tINT\tWIS\tCHA\n"
-		val += self.stats.replace(";","\t") + "\n"
+		val += self.stats.replace(";","\t") + "\n\n"
 		val += self.traits + "\n\n"
 		val += self.weapons + "\n"
 		val += self.spells + "\n"
@@ -78,45 +105,37 @@ class LinkedList:
 	
 
 # Main function starts here.
-file = open(sys.argv[1], "r")
-
-file_contents = file.readlines()
-
-file_contents.pop(0)
+tree = et.parse(sys.argv[1])
+root = tree.getroot()
 
 # Declare variables
 initiative_table = LinkedList()
 
-# Add contents to list
-for line in file_contents:
-	line = line.replace('\n', '')
-	line = line.replace('endl','\n')
-	line = line.replace('n/a','')
-	line = line.split(',')
-	initiative = rand(1,21,1) + int(line[1])
-	# entry = Node(line[0],initiative)
-	entry = Node(line[0],initiative,line[2],line[3],line[4],line[5],line[6],line[7],line[8],line[9],line[10])
+for monster in root:
+	#for child in monster:
+		#entry = Node(child)
+		entry = Node(monster)
+
+		if initiative_table.head is None:
+			initiative_table.head = entry
+			continue
 	
-	if initiative_table.head is None:
-		initiative_table.head = entry
-		continue
+		node = initiative_table.head
+
+		if (entry.init >= initiative_table.head.init):
+			initiative_table.change_head(entry)
+			continue
+
+		while node is not None:
+			if (node.next is None):
+				node.insert_after(entry)
+				break
+			elif (entry.init > node.next.init):
+				node.insert_after(entry)
+				break
+			else:
+				node = node.next
 	
-	node = initiative_table.head
-
-	if (entry.init >= initiative_table.head.init):
-		initiative_table.change_head(entry)
-		continue
-
-	while node is not None:
-		if (node.next is None):
-			node.insert_after(entry)
-			break
-		elif (entry.init > node.next.init):
-			node.insert_after(entry)
-			break
-		else:
-			node = node.next
-
 print initiative_table
 
 node = initiative_table.head
@@ -174,3 +193,9 @@ while (val is not "x"):
 	elif (arguments[0] == "exit"):
 		print("Exiting...\n")
 		break
+
+# Add contents to list
+#for line in file_contents:
+#	entry = Node(line[0],initiative,line[2],line[3],line[4],line[5],line[6],line[7],line[8],line[9],line[10])
+	
+	
