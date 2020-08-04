@@ -2,7 +2,7 @@
 	<monster>
 		<name>Orc</name>
 		<init>1</init>
-		<cr>½</cr>
+		<cr>1/2</cr>
 		<hp>15</hp>
 		<ac>13</ac>
 		<speed>30</speed>
@@ -22,7 +22,7 @@ Javelin:	+5 to hit. 30/120ft. 1d6+3 piercing
 	<monster>
 		<name>Goblin</name>
 		<init>2</init>
-		<cr>¼</cr>
+		<cr>1/4</cr>
 		<hp>7</hp>
 		<ac>15</ac>
 		<speed>30</speed>
@@ -61,7 +61,7 @@ Javelin:	+4 to hit. 30/120ft. 1D6+2 piercing damage
 	<monster>
 		<name>Bandit</name>
 		<init>1</init>
-		<cr>0.125</cr>
+		<cr>1/8</cr>
 		<hp>11</hp>
 		<ac>12</ac>
 		<speed>30</speed>
@@ -75,7 +75,7 @@ Light crossbow:	+3 to hit. 80/320ft. 1d8+1 piercing.</weapons>
 	<monster>
 		<name>Kobold</name>
 		<init>2</init>
-		<cr>0.125</cr>
+		<cr>1/8</cr>
 		<hp>5</hp>
 		<ac>12</ac>
 		<speed>30</speed>
@@ -90,7 +90,7 @@ Sling:		+4 to hit. 30/120 ft. 1d4+2 bludgeoning
 	<monster>
 		<name>Hobgoblin</name>
 		<init>1</init>
-		<cr>½</cr>
+		<cr>1/2</cr>
 		<hp>11</hp>
 		<ac>18</ac>
 		<speed>30</speed>
@@ -108,7 +108,7 @@ Longbow:		+3 to hit. 150/600ft. 1d8+1 piercing damage
 	<monster>
 		<name>Drow</name>
 		<init>2</init>
-		<cr>¼</cr>
+		<cr>1/4</cr>
 		<hp>13</hp>
 		<ac>15</ac>
 		<speed>30</speed>
