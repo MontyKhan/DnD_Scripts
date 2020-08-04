@@ -112,31 +112,30 @@ root = tree.getroot()
 initiative_table = LinkedList()
 
 for monster in root:
-	#for child in monster:
-		#entry = Node(child)
-		entry = Node(monster)
+	entry = Node(monster)
 
-		if initiative_table.head is None:
-			initiative_table.head = entry
-			continue
+	if initiative_table.head is None:
+		initiative_table.head = entry
+		continue
 	
-		node = initiative_table.head
+	node = initiative_table.head
 
-		if (entry.init >= initiative_table.head.init):
-			initiative_table.change_head(entry)
-			continue
+	if (entry.init >= initiative_table.head.init):
+		initiative_table.change_head(entry)
+		continue
 
-		while node is not None:
-			if (node.next is None):
-				node.insert_after(entry)
-				break
-			elif (entry.init > node.next.init):
-				node.insert_after(entry)
-				break
-			else:
-				node = node.next
-	
+	while node is not None:
+		if (node.next is None):
+			node.insert_after(entry)
+			break
+		elif (entry.init > node.next.init):
+			node.insert_after(entry)
+			break
+		else:
+			node = node.next
+
 print initiative_table
+print "\n"
 
 node = initiative_table.head
 
@@ -193,9 +192,3 @@ while (val is not "x"):
 	elif (arguments[0] == "exit"):
 		print("Exiting...\n")
 		break
-
-# Add contents to list
-#for line in file_contents:
-#	entry = Node(line[0],initiative,line[2],line[3],line[4],line[5],line[6],line[7],line[8],line[9],line[10])
-	
-	
