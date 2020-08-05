@@ -76,7 +76,9 @@ class LinkedList:
 	def __repr__(self):
 		node = self.head
 		nodes = []
-		while node is not None:
+		nodes.append(node.name + " " + str(node.init))
+		node = node.next
+		while (node is not None and node is not self.head):
 			nodes.append(node.name + " " + str(node.init))
 			node = node.next
 		nodes.append("None")
@@ -208,6 +210,8 @@ while (val is not "x"):
 		raw_input()
 	elif (arguments[0] == "import"):
 		new_monster = mm.import_monster(arguments)
+		init_field = new_monster.find("init")
+		init_field.text = str(rand(1,21,1) + int(init_field.text))
 		entry = Node(new_monster)
 		tmp = node
 		if (initiative_table.head.init < entry.init):
@@ -226,6 +230,11 @@ while (val is not "x"):
 		
 			node.insert_after(entry)
 			node = tmp
+		print "Press ENTER to continue..."
+		raw_input()
+	elif (arguments[0] == "printall"):
+		print "test"
+		print initiative_table
 		print "Press ENTER to continue..."
 		raw_input()
 	elif (arguments[0] == "exit"):
