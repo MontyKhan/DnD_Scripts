@@ -10,7 +10,7 @@ class Node:
 			if (child.tag == "name"):
 				self.name = child.text
 			elif (child.tag == "init"):
-				self.init = rand(1,21,1) + int(child.text)
+				self.init = int(child.text)
 			elif (child.tag == "cr"):
 				self.cr = child.text
 			elif (child.tag == "hp"):
@@ -117,6 +117,8 @@ if (root.tag != "encounter"):
 initiative_table = LinkedList()
 
 for monster in root:
+	init_field = monster.find("init")
+	init_field.text = str(rand(1,21,1) + int(init_field.text))
 	entry = Node(monster)
 
 	if initiative_table.head is None:
@@ -165,7 +167,17 @@ while (val is not "x"):
 	if (arguments[0] == "cont"):
 		continue
 	elif (arguments[0] == "add"):
-		entry = Node(arguments[1],int(arguments[2]),'Player','','','','','','','','')
+		player = et.Element('player')
+
+		player_name = et.Element('name')
+		player_name.text = arguments[1]
+		player.append(player_name)
+
+		player_init = et.Element('init')
+		player_init.text = arguments[2]
+		player.append(player_init)
+
+		entry = Node(player)
 		tmp = node
 		if (initiative_table.head.init < entry.init):
 			while (node.next != initiative_table.head):
@@ -182,7 +194,7 @@ while (val is not "x"):
 				node = node.next
 		
 			node.insert_after(entry)
-			node = tmp
+		node = tmp
 	elif (arguments[0] == "rm"):
 		tmp = node
 		while (node.name != arguments[1]):
