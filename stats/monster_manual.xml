@@ -1,0 +1,130 @@
+<mm>
+	<monster>
+		<name>Orc</name>
+		<init>1</init>
+		<cr>1/2</cr>
+		<hp>15</hp>
+		<ac>13</ac>
+		<speed>30</speed>
+		<stats>16;12;16;7;11;10</stats>
+		<traits>Skills: 	Intimidation +2
+Senses: 	Darkvision 60ft. Passive perception 10
+Languages: 	Common, Orc
+
+Aggressive: 	As a bonus action, dash towards foe
+		</traits>
+		<weapons>Greataxe:	+5 to hit. 5Ft. 1d12+3 slashing
+Javelin:	+5 to hit. 5Ft. 1d6+3 piercing
+Javelin:	+5 to hit. 30/120ft. 1d6+3 piercing
+		</weapons>
+	</monster>
+
+	<monster>
+		<name>Goblin</name>
+		<init>2</init>
+		<cr>1/4</cr>
+		<hp>7</hp>
+		<ac>15</ac>
+		<speed>30</speed>
+		<stats>8;14;10;10;8;8</stats>
+		<traits>Skills:		Stealth +6
+Senses:		Darkvision 60ft. passive perception 9
+Languages:	Common, Goblin
+
+Nimble Escape:	Can take Disengage or Hide as a bonus action
+		</traits>
+		<weapons>Scimitar:	+4 to hit. 5Ft. 1d6+2 slashing
+Shortbow:	+4 to hit. 80/320ft. 1d6+2 piercing
+		</weapons>
+	</monster>
+
+	<monster>
+		<name>Bugbear</name>
+		<init>2</init>
+		<cr>1</cr>
+		<hp>27</hp>
+		<ac>16</ac>
+		<speed>30</speed>
+		<stats>15;14;13;8;11;9</stats>
+		<traits>Skills:		Stealth +6. Survival +2
+Senses:		Darkvision 60ft. passive perception 10
+Languages:	Common, Goblin
+
+Surprise Attack:If a bugbear surprises a foe and hits on the first round, deal extra 2d6 damage
+		</traits>
+		<weapons>Morningstar:	+4 to hit. 5Ft. 2d8+2 piercing
+Javelin:	+4 to hit. 5ft. 2d6+2 piercing damage
+Javelin:	+4 to hit. 30/120ft. 1D6+2 piercing damage
+		</weapons>
+	</monster>
+
+	<monster>
+		<name>Bandit</name>
+		<init>1</init>
+		<cr>1/8</cr>
+		<hp>11</hp>
+		<ac>12</ac>
+		<speed>30</speed>
+		<stats>11;12;12;10;10;10</stats>
+		<traits>Senses:		Passive perception 10
+Languages:	Any one language</traits>
+		<weapons>Scimitar:	+3 to hit. 5Ft. 1d6+1 bludgeoning
+Light crossbow:	+3 to hit. 80/320ft. 1d8+1 piercing.</weapons>
+	</monster>
+
+	<monster>
+		<name>Kobold</name>
+		<init>2</init>
+		<cr>1/8</cr>
+		<hp>5</hp>
+		<ac>12</ac>
+		<speed>30</speed>
+		<stats>7;15;9;8;7;8</stats>
+		<traits>Sunlight Sensitivity:	Disadvantage on attack rolls and Perception checks in daylight
+Pack Tactics:	Advantage on attack if next to healthy ally</traits>
+		<weapons>Dagger:		+4 to hit. 5Ft. 1d4+2 piercing
+Sling:		+4 to hit. 30/120 ft. 1d4+2 bludgeoning
+		</weapons>
+	</monster>
+
+	<monster>
+		<name>Hobgoblin</name>
+		<init>1</init>
+		<cr>1/2</cr>
+		<hp>11</hp>
+		<ac>18</ac>
+		<speed>30</speed>
+		<stats>13;12;12;10;10;9</stats>
+		<traits>Senses:		Darkvision 60ft. passive perception 10
+Languages:		Common, Goblin
+
+Martial Advantage:	Once per turn, deal extra 2d6 if foe next to ally</traits>
+		<weapons>Longsword:		+3 to hit. 5Ft. 1d10+1 slashing damage, two handed
+Longsword:		+3 to hit. 5Ft. 1D8+1 slashing damage, one handed
+Longbow:		+3 to hit. 150/600ft. 1d8+1 piercing damage
+		</weapons>
+	</monster>
+
+	<monster>
+		<name>Drow</name>
+		<init>2</init>
+		<cr>1/4</cr>
+		<hp>13</hp>
+		<ac>15</ac>
+		<speed>30</speed>
+		<stats>10;14;10;11;11;12</stats>
+		<traits>Skills:			Perception +2. Stealth +4
+Senses:			Darkvision 120ft. passive perception 12
+Languages: 		Elvish, Undercommon
+
+Fey Ancestry:		Advantage against charm and immune to sleep
+Sunlight Sensitivity:	Daylight gives disadvantage on Attack and Perception
+Innate Spellcasting: 	Dancing Lights at will. Darkness and Faerie Fire once per day each</traits>
+		<weapons>Shortsword:		+4 to hit. 5Ft. 1d6+2 piercing.
+Hand Crossbow:		+4 to hit. 30/120ft. 1d6+2 piercing.
+			If target fails DC13 Con check, poisoned for 1 hour.
+			If fails by 5 or more fall unconscious until physically woken.
+		</weapons>
+	</monster>
+
+</mm>

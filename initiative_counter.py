@@ -1,3 +1,4 @@
+import monster_manual as mm
 import xml.etree.ElementTree as et
 from random import randrange as rand	# For rolling of dice
 import sys				# For taking initial arguments
@@ -108,6 +109,10 @@ class LinkedList:
 tree = et.parse(sys.argv[1])
 root = tree.getroot()
 
+if (root.tag != "encounter"):
+	print("Incorrect format. Not an encounter!\n")
+	exit()
+
 # Declare variables
 initiative_table = LinkedList()
 
@@ -188,6 +193,28 @@ while (val is not "x"):
 		node = tmp
 	elif (arguments[0] == "get"):
 		print initiative_table.get(arguments[1])
+		raw_input()
+	elif (arguments[0] == "import"):
+		new_monster = mm.import_monster(arguments)
+		entry = Node(new_monster)
+		tmp = node
+		if (initiative_table.head.init < entry.init):
+			while (node.next != initiative_table.head):
+				node = node.next
+			node.next = None
+			initiative_table.change_head(entry)
+			while (node.next != None):
+				node = node.next
+			node.next = initiative_table.head
+		else:
+			while not ((entry.init < node.init) and (entry.init > node.next.init)):
+				if (entry.init < node.init) and (node.next == initiative_table.head):
+					break
+				node = node.next
+		
+			node.insert_after(entry)
+			node = tmp
+		print "Press ENTER to continue..."
 		raw_input()
 	elif (arguments[0] == "exit"):
 		print("Exiting...\n")
