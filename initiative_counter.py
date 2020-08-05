@@ -197,6 +197,8 @@ while (val is not "x"):
 		
 			node.insert_after(entry)
 		node = tmp
+		print "Press ENTER to continue..."
+		raw_input()
 	elif (arguments[0] == "rm"):
 		tmp = node
 		while (node.name != arguments[1]):
@@ -205,8 +207,11 @@ while (val is not "x"):
 		initiative_table.remove(node)
 		
 		node = tmp
+		print "Press ENTER to continue..."
+		raw_input()
 	elif (arguments[0] == "get"):
 		print initiative_table.get(arguments[1])
+		print "Press ENTER to continue..."
 		raw_input()
 	elif (arguments[0] == "import"):
 		new_monster = mm.import_monster(arguments)
