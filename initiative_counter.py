@@ -163,90 +163,91 @@ while (val is not "x"):
 	# Remove inputted line
 	print ("\033[A                             \033[A")
 
-	input = input.replace('\n', '')
-	arguments = input.split(' ')
+	if (len(input) > 1):
+		input = input.replace('\n', '')
+		arguments = input.split(" -")
 
-	if (arguments[0] == "cont"):
-		continue
-	elif (arguments[0] == "add"):
-		player = et.Element('player')
-
-		player_name = et.Element('name')
-		player_name.text = arguments[1]
-		player.append(player_name)
-
-		player_init = et.Element('init')
-		player_init.text = arguments[2]
-		player.append(player_init)
-
-		entry = Node(player)
-		tmp = node
-		if (initiative_table.head.init < entry.init):
-			while (node.next != initiative_table.head):
-				node = node.next
-			node.next = None
-			initiative_table.change_head(entry)
-			while (node.next != None):
-				node = node.next
-			node.next = initiative_table.head
-		else:
-			while not ((entry.init < node.init) and (entry.init > node.next.init)):
-				if (entry.init < node.init) and (node.next == initiative_table.head):
-					break
-				node = node.next
-		
-			node.insert_after(entry)
-		node = tmp
-		print "Press ENTER to continue..."
-		raw_input()
-	elif (arguments[0] == "rm"):
-		tmp = node
-		while (node.name != arguments[1]):
-			node = node.next
-
-		initiative_table.remove(node)
-		
-		node = tmp
-		print "Press ENTER to continue..."
-		raw_input()
-	elif (arguments[0] == "get"):
-		print initiative_table.get(arguments[1])
-		print "Press ENTER to continue..."
-		raw_input()
-	elif (arguments[0] == "import"):
-		new_monster = mm.import_monster(arguments)
-
-		init_field = new_monster.find("init")
-		if (len(arguments) == 3):
-			init_field.text = arguments[2]
-		else:
-			init_field.text = str(rand(1,21,1) + int(init_field.text))
-
-		entry = Node(new_monster)
-		tmp = node
-		if (initiative_table.head.init < entry.init):
-			while (node.next != initiative_table.head):
-				node = node.next
-			node.next = None
-			initiative_table.change_head(entry)
-			while (node.next != None):
-				node = node.next
-			node.next = initiative_table.head
-		else:
-			while not ((entry.init < node.init) and (entry.init > node.next.init)):
-				if (entry.init < node.init) and (node.next == initiative_table.head):
-					break
-				node = node.next
-		
-			node.insert_after(entry)
+		if (arguments[0] == "cont"):
+			continue
+		elif (arguments[0] == "add"):
+			player = et.Element('player')
+	
+			player_name = et.Element('name')
+			player_name.text = arguments[1]
+			player.append(player_name)
+	
+			player_init = et.Element('init')
+			player_init.text = arguments[2]
+			player.append(player_init)
+	
+			entry = Node(player)
+			tmp = node
+			if (initiative_table.head.init < entry.init):
+				while (node.next != initiative_table.head):
+					node = node.next
+				node.next = None
+				initiative_table.change_head(entry)
+				while (node.next != None):
+					node = node.next
+				node.next = initiative_table.head
+			else:
+				while not ((entry.init < node.init) and (entry.init > node.next.init)):
+					if (entry.init < node.init) and (node.next == initiative_table.head):
+						break
+					node = node.next
+			
+				node.insert_after(entry)
 			node = tmp
-		print "Press ENTER to continue..."
-		raw_input()
-	elif (arguments[0] == "printall"):
-		print "test"
-		print initiative_table
-		print "Press ENTER to continue..."
-		raw_input()
-	elif (arguments[0] == "exit"):
-		print("Exiting...\n")
-		break
+			print "Press ENTER to continue..."
+			raw_input()
+		elif (arguments[0] == "rm"):
+			tmp = node
+			while (node.name != arguments[1]):
+				node = node.next
+	
+			initiative_table.remove(node)
+			
+			node = tmp
+			print "Press ENTER to continue..."
+			raw_input()
+		elif (arguments[0] == "get"):
+			print initiative_table.get(arguments[1])
+			print "Press ENTER to continue..."
+			raw_input()
+		elif (arguments[0] == "import"):
+			new_monster = mm.import_monster(arguments)
+	
+			init_field = new_monster.find("init")
+			if (len(arguments) == 3):
+				init_field.text = arguments[2]
+			else:
+				init_field.text = str(rand(1,21,1) + int(init_field.text))
+	
+			entry = Node(new_monster)
+			tmp = node
+			if (initiative_table.head.init < entry.init):
+				while (node.next != initiative_table.head):
+					node = node.next
+				node.next = None
+				initiative_table.change_head(entry)
+				while (node.next != None):
+					node = node.next
+				node.next = initiative_table.head
+			else:
+				while not ((entry.init < node.init) and (entry.init > node.next.init)):
+					if (entry.init < node.init) and (node.next == initiative_table.head):
+						break
+					node = node.next
+			
+				node.insert_after(entry)
+				node = tmp
+			print "Press ENTER to continue..."
+			raw_input()
+		elif (arguments[0] == "printall"):
+			print "test"
+			print initiative_table
+			print "Press ENTER to continue..."
+			raw_input()
+		elif (arguments[0] == "exit"):
+			print("Exiting...\n")
+			break
