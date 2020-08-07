@@ -158,13 +158,13 @@ val = "\n"
 while (val != "x"):
 	node = node.next
 	print (node)
-	input = raw_input()
+	input_str = input()
 
 	# Remove inputted line
-	print ("\033[A                             \033[A")
+	# print ("\033[A                             \033[A")
 
-	input = input.replace('\n', '')
-	arguments = input.split(' ')
+	input_str = input_str.replace('\n', '')
+	arguments = input_str.split(' ')
 
 	if (arguments[0] == "cont"):
 		continue
@@ -198,7 +198,7 @@ while (val != "x"):
 			node.insert_after(entry)
 		node = tmp
 		print ("Press ENTER to continue...")
-		raw_input()
+		input()
 	elif (arguments[0] == "rm"):
 		tmp = node
 		while (node.name != arguments[1]):
@@ -208,11 +208,11 @@ while (val != "x"):
 
 		node = tmp
 		print ("Press ENTER to continue...")
-		raw_input()
+		input()
 	elif (arguments[0] == "get"):
 		print (initiative_table.get(arguments[1]))
 		print ("Press ENTER to continue...")
-		raw_input()
+		input()
 	elif (arguments[0] == "import"):
 		new_monster = mm.import_monster(arguments)
 
@@ -241,12 +241,12 @@ while (val != "x"):
 			node.insert_after(entry)
 			node = tmp
 		print ("Press ENTER to continue...")
-		raw_input()
+		input()
 	elif (arguments[0] == "printall"):
 		print ("test")
 		print (initiative_table)
 		print ("Press ENTER to continue...")
-		raw_input()
+		input()
 	elif (arguments[0] == "exit"):
 		print("Exiting...\n")
 		break
