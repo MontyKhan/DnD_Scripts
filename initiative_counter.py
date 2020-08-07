@@ -105,7 +105,7 @@ class LinkedList:
 		while (node.name != target_name):
 			node = node.next
 		return node
-	
+
 
 # Main function starts here.
 tree = et.parse(sys.argv[1])
@@ -126,7 +126,7 @@ for monster in root:
 	if initiative_table.head is None:
 		initiative_table.head = entry
 		continue
-	
+
 	node = initiative_table.head
 
 	if (entry.init >= initiative_table.head.init):
@@ -143,8 +143,8 @@ for monster in root:
 		else:
 			node = node.next
 
-print initiative_table
-print "\n"
+print (initiative_table)
+print ("\n")
 
 node = initiative_table.head
 
@@ -155,16 +155,16 @@ node.next = initiative_table.head
 
 val = "\n"
 
-while (val is not "x"):
+while (val != "x"):
 	node = node.next
-	print node
-	input = raw_input()
+	print (node)
+	input_str = input()
 
 	# Remove inputted line
-	print ("\033[A                             \033[A")
+	# print ("\033[A                             \033[A")
 
-	input = input.replace('\n', '')
-	arguments = input.split(' ')
+	input_str = input_str.replace('\n', '')
+	arguments = input_str.split(' ')
 
 	if (arguments[0] == "cont"):
 		continue
@@ -194,25 +194,25 @@ while (val is not "x"):
 				if (entry.init < node.init) and (node.next == initiative_table.head):
 					break
 				node = node.next
-		
+
 			node.insert_after(entry)
 		node = tmp
-		print "Press ENTER to continue..."
-		raw_input()
+		print ("Press ENTER to continue...")
+		input()
 	elif (arguments[0] == "rm"):
 		tmp = node
 		while (node.name != arguments[1]):
 			node = node.next
 
 		initiative_table.remove(node)
-		
+
 		node = tmp
-		print "Press ENTER to continue..."
-		raw_input()
+		print ("Press ENTER to continue...")
+		input()
 	elif (arguments[0] == "get"):
-		print initiative_table.get(arguments[1])
-		print "Press ENTER to continue..."
-		raw_input()
+		print (initiative_table.get(arguments[1]))
+		print ("Press ENTER to continue...")
+		input()
 	elif (arguments[0] == "import"):
 		new_monster = mm.import_monster(arguments)
 
@@ -237,16 +237,16 @@ while (val is not "x"):
 				if (entry.init < node.init) and (node.next == initiative_table.head):
 					break
 				node = node.next
-		
+
 			node.insert_after(entry)
 			node = tmp
-		print "Press ENTER to continue..."
-		raw_input()
+		print ("Press ENTER to continue...")
+		input()
 	elif (arguments[0] == "printall"):
-		print "test"
-		print initiative_table
-		print "Press ENTER to continue..."
-		raw_input()
+		print ("test")
+		print (initiative_table)
+		print ("Press ENTER to continue...")
+		input()
 	elif (arguments[0] == "exit"):
 		print("Exiting...\n")
 		break
