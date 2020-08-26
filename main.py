@@ -162,7 +162,89 @@ class MainPrompt(Cmd):
 		print (self.active_node)
 		return False
 
+	def do_add(self,inp):
+		name,init = [arg for arg in inp.split()]
+		player = et.Element('player')
 
+		player_name = et.Element('name')
+		player_name.text = name
+		player.append(player_name)
+
+		player_init = et.Element('init')
+		player_init.text = init
+		player.append(player_init)
+
+		entry = Node(player)
+		tmp = self.active_node
+		if (self.initiative_table.head.init < entry.init):
+			while (node.next != initiative_table.head):
+				self.active_node = self.active_node.next
+			self.active_node.next = None
+			self.initiative_table.change_head(entry)
+			while (self.active_node.next != None):
+				self.active_node = self.active_node.next
+			self.active_node.next = self.initiative_table.head
+		else:
+			while not ((entry.init < self.active_node.init) and (entry.init > self.active_node.next.init)):
+				if (entry.init < self.active_node.init) and (self.active_node.next == self.initiative_table.head):
+					break
+				self.active_node = self.active_node.next
+
+			self.active_node.insert_after(entry)
+		self.active_node = tmp
+		return False
+
+	def do_rm(self,inp):
+		tmp = self.active_node
+		while (self.active_node.name != inp):
+			self.active_node = self.active_node.next
+
+		self.initiative_table.remove(self.active_node)
+
+		self.active_node = tmp
+
+		return False
+	def do_printall(self,inp):
+		print (self.initiative_table)
+		return False
+
+	def get(self,inp):
+		print (initiative_table.get(inp))
+		return False
+
+	def do_import(self,inp):
+		args = inp.split()
+
+		if (len(args) == 0):
+			print ("Insufficient arguments!\n")
+			return False
+
+		new_monster = mm.import_monster(args[0])	# Call by name
+
+		init_field = new_monster.find("init")
+		if (len(args) == 2):
+			init_field.text = args[1]
+		else:
+			init_field.text = str(rand(1,21,1) + int(init_field.text))
+
+		entry = Node(new_monster)
+		tmp = self.active_node
+		if (self.initiative_table.head.init < entry.init):
+			while (self.active_node.next != self.initiative_table.head):
+				self.active_node = self.active_node.next
+			self.active_node.next = None
+			self.initiative_table.change_head(entry)
+			while (self.active_node.next != None):
+				self.active_node = self.active_node.next
+			self.active_node.next = self.initiative_table.head
+		else:
+			while not ((entry.init < self.active_node.init) and (entry.init > self.active_node.next.init)):
+				if (entry.init < self.active_node.init) and (self.active_node.next == self.initiative_table.head):
+					break
+				self.active_node = self.active_node.next
+
+			self.active_node.insert_after(entry)
+			self.active_node = tmp
 
 # Main loop
 MainPrompt().cmdloop()

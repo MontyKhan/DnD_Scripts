@@ -1,10 +1,6 @@
 import xml.etree.ElementTree as et
 
-def import_monster(arguments):
-	if (len(arguments) == 1):
-		print ("Insufficient arguments!\n")
-		return None
-
+def import_monster(name):
 	tree = et.parse("stats/monster_manual.xml")
 	root = tree.getroot()
 
@@ -15,7 +11,7 @@ def import_monster(arguments):
 	# Iterate through entries in monster manual
 	for monster in root:
 		for child in monster:
-			if (child.tag == "name" and child.text == arguments[1]):
+			if (child.tag == "name" and child.text == name):
 				print ("Found!")
 				return monster
 			else:
