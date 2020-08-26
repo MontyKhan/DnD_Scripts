@@ -18,3 +18,4 @@ def import_monster(name):
 				continue
 
 	print ("Not found!")
+	return None

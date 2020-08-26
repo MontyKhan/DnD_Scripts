@@ -221,6 +221,9 @@ class MainPrompt(Cmd):
 
 		new_monster = mm.import_monster(args[0])	# Call by name
 
+		if (new_monster == None):
+			return False
+
 		init_field = new_monster.find("init")
 		if (len(args) == 2):
 			init_field.text = args[1]
