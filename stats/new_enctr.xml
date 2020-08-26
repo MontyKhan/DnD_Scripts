@@ -1,0 +1,21 @@
+<encounter><monster>
+		<name>Orc</name>
+		<init>1</init>
+		<cr>1/2</cr>
+		<hp>15</hp>
+		<ac>13</ac>
+		<speed>30</speed>
+		<stats>16;12;16;7;11;10</stats>
+		<traits>Skills: 	Intimidation +2
+Senses: 	Darkvision 60ft. Passive perception 10
+Languages: 	Common, Orc
+
+Aggressive: 	As a bonus action, dash towards foe
+		</traits>
+		<weapons>Greataxe:	+5 to hit. 5Ft. 1d12+3 slashing
+Javelin:	+5 to hit. 5Ft. 1d6+3 piercing
+Javelin:	+5 to hit. 30/120ft. 1d6+3 piercing
+		</weapons>
+	</monster>
+
+	</encounter>

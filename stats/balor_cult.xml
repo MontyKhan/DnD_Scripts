@@ -1,0 +1,117 @@
+<encounter>
+	<monster>
+		<name>Cultist 1</name>
+		<init>1</init>
+		<cr>1/8</cr>
+		<hp>9</hp>
+		<ac>12</ac>
+		<speed>30</speed>
+		<stats>11;12;10;10;11;10</stats>
+		<traits>Skills: 	Deception +2, Religion +2
+Senses: 	Passive perception 10
+Languages: 	Any one language
+
+Dark Devotion:	Advantage on ST against being charmed or frightened.
+		</traits>
+		<weapons>Scimitar:	+3 to hit, 5ft. 1d6 + 1 slashing.
+		</weapons>
+	</monster>
+
+	<monster>
+		<name>Cultist 2</name>
+		<init>1</init>
+		<cr>1/8</cr>
+		<hp>9</hp>
+		<ac>12</ac>
+		<speed>30</speed>
+		<stats>11;12;10;10;11;10</stats>
+		<traits>Skills: 	Deception +2, Religion +2
+Senses: 	Passive perception 10
+Languages: 	Any one language
+
+Dark Devotion:	Advantage on ST against being charmed or frightened.
+		</traits>
+		<weapons>Scimitar:	+3 to hit, 5ft. 1d6 + 1 slashing.
+		</weapons>
+	</monster>
+
+	<monster>
+		<name>Cult Fanatic 1</name>
+		<init>2</init>
+		<cr>2</cr>
+		<hp>33</hp>
+		<ac>13</ac>
+		<speed>30</speed>
+		<stats>11;14;12;10;13;14</stats>
+		<traits>Skills: 	Deception +4, Persuasion +4, Religion +2
+Senses: 	Passive perception 11
+Languages: 	Any one language
+
+Dark Devotion:	Advantage on ST against being charmed or frightened.
+		</traits>
+		<weapons>Multiattack:	x2 melee.
+Dagger:	+4 to hit, 5ft or 20/60. 1d4+2 piercing.
+		</weapons>
+		<spells>4th-level spellcaster, spell save DC 11, +3 to hit.
+
+Cantrips:	Light, sacred flame, thaumaturgy
+1st level x 4:	Command, inflict wounds, shield of faith
+2nd level x 3:	Hold person, spiritual weapon
+		</spells>
+	</monster>
+
+	<monster>
+		<name>Cult Fanatic 2</name>
+		<init>2</init>
+		<cr>2</cr>
+		<hp>33</hp>
+		<ac>13</ac>
+		<speed>30</speed>
+		<stats>11;14;12;10;13;14</stats>
+		<traits>Skills: 	Deception +4, Persuasion +4, Religion +2
+Senses: 	Passive perception 11
+Languages: 	Any one language
+
+Dark Devotion:	Advantage on ST against being charmed or frightened.
+		</traits>
+		<weapons>Multiattack:	x2 melee.
+Dagger:	+4 to hit, 5ft or 20/60. 1d4+2 piercing.
+		</weapons>
+		<spells>4th-level spellcaster, spell save DC 11, +3 to hit.
+
+Cantrips:	Light, sacred flame, thaumaturgy
+1st level x 4:	Command, inflict wounds, shield of faith
+2nd level x 3:	Hold person, spiritual weapon
+		</spells>
+	</monster>
+
+	<monster>
+		<name>Warlock of the Fiend</name>
+		<init>2</init>
+		<cr>7</cr>
+		<hp>78</hp>
+		<ac>12, 15 with mage armor</ac>
+		<speed>30</speed>
+		<stats>10;14;15;12;12;18</stats>
+		<traits>Saving Throws:	Wis +4, Cha +7
+Skills: 	Arcana +4, Deception +7, Persuasion +7, Religion +4
+Resistances:	Slashing from nonmagical attacks not made with silvered weapons
+Senses: 	Darkvision 60ft, passive perception 11
+Languages: 	Any two language
+
+Innate spellcasting, DC15:
+	At will:Alter self, false life, levitate (self only), mage armour (self only), silent image
+	1/Day:	Feeblemind, finger of death, plane shift	
+		</traits>
+		<weapons>Mace:	+3 to hit, 5ft. 1d6 bludgeoning plus 3d6 fire damage
+		</weapons>
+		<spells>17th level spellcaster, DC 15, +7 to hit.
+
+Cantrips:	   Eldritch blast, fire bolt, friends, mage hand, minor illusion, prestidigitation, shocking grasp
+1st-5th level x 4: Banishment, burning hands, flame strike, hellish rebuke, magic circle, scorching ray, scrying, stinking cloud, suggestion, wall of fire.
+		</spells>
+		<abilities>Dark One's Own Luck (Recharges after a rest):
+When the warlock makes an ability check or saving throw, it can add a d10 to the roll. It can do this after the roll is made, but before the roll's effect's occur.
+		</abilities>
+	</monster>
+</encounter>
