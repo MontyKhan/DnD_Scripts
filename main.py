@@ -185,8 +185,11 @@ class MainPrompt(Cmd):
 				self.active_node = self.active_node.next
 			self.active_node.next = self.initiative_table.head
 		else:
-			while not ((entry.init < self.active_node.init) and (entry.init > self.active_node.next.init)):
-				if (entry.init < self.active_node.init) and (self.active_node.next == self.initiative_table.head):
+			# Keep looping until position in initiative table has higher initiative than entry.
+			# If init of entry is higher than that of the next node, means you're at the end of the table.
+			# In that case, insert at end of table.
+			while not ((entry.init <= self.active_node.init) and (entry.init > self.active_node.next.init)):
+				if (entry.init <= self.active_node.init) and (self.active_node.next == self.initiative_table.head):
 					break
 				self.active_node = self.active_node.next
 
