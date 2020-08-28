@@ -1,4 +1,6 @@
 from cmd import Cmd
+from os import listdir
+from os import path
 import monster_manual as mm
 import xml.etree.ElementTree as et
 from random import randrange as rand	# For rolling of dice
@@ -156,6 +158,38 @@ class MainPrompt(Cmd):
 
 		node.next = self.initiative_table.head
 		self.active_node = node
+
+	def complete_loadxml(self, text, line, start_index, end_index):
+		# If no prefix typed, print whole directory
+		if (text):
+			filepath = "./"
+			directories = text.split('/')
+			# If prefix typed is not a complete folder, just take the prefix.
+			if (len(directories) < 2):
+				text = directories[-1]
+			else:
+				# If it is a complete folder, use complete path then autocomplete final term.
+				text = directories.pop()
+				print(text)
+				for folder in directories:
+					filepath += folder
+					filepath += "/"
+
+			solutions = []
+			# Add a / to the end of directories.
+			for file in listdir(filepath):
+				if path.isdir(file):
+					file += "/"
+				solutions.append(file)
+
+			# Return files which match semi-complete term.
+			return [solution for solution in solutions
+				if solution.startswith(text)
+			]
+		else:
+			return listdir()
+				
+				
 
 	def do_next(self, inp):
 		self.active_node = self.active_node.next
